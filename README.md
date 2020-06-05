@@ -14,7 +14,7 @@ We're going to access each node using wireless LAN and use Ethernet port for com
 ## OS installation
 We want to use CentOS in our cluster. To be noticed, the distribution for armv7hl platform is called "CentOS Userland Linux" and not "CentOS Linux". Find the appropriate image for Raspberry Pi: http://isoredirect.centos.org/altarch/7/isos/armhfp. We do not need GUI, thus we select [armv7hl-RaspberryPI-Minimal](http://mirror.dal.nexril.net/centos-altarch/7.8.2003/isos/armhfp/CentOS-Userland-7-armv7hl-RaspberryPI-Minimal-4-2003-sda.raw.xz). Download the zip file and unzip it to iso image. Image all microSD cards with CentOS7 using [Raspberry Pi Imager](https://www.raspberrypi.org/blog/raspberry-pi-imager-imaging-utility/). The default root passward is **centos**.
 ## Expand capacity
-There is a ``/root/README`` file that describes how to expand the root partition to capacity of the MicroSD. Follow the instructions to expand the root filesystem using: ``rootfs-expand``
+There is a ``/root/README`` file that describes how to expand the root partition to capacity of the MicroSD. On each node, follow the instructions to expand the root filesystem using: ``rootfs-expand``
 
 ```
 == CentOS 7 userland ==
@@ -22,3 +22,5 @@ There is a ``/root/README`` file that describes how to expand the root partition
 If you want to automatically resize your / partition, just type the following (as root user):
 rootfs-expand
 ```
+## Network configuration
+On each node, use `nmtui` to active WiFi connection
